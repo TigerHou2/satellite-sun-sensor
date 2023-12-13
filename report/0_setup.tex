@@ -1,0 +1,120 @@
+% ======================================================
+% Document Type and Margins
+% ======================================================
+\documentclass[12pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[titletoc,title]{appendix}
+
+% ======================================================
+% Text Formatting
+% ======================================================
+\usepackage{newpxtext}
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancypagestyle{firstpagestyle}
+    {
+        \renewcommand{\headrulewidth}{0pt}
+        \fancyhf{}
+        \fancyfoot[C]{Page \thepage}
+    }
+\usepackage{placeins}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{parskip}
+\renewcommand{\baselinestretch}{1.2}
+% \renewcommand{\theenumi}{\alph{enumi}} % enumerates with letters instead of numbers
+\usepackage{tcolorbox}
+
+% ======================================================
+% Math Formatting
+% ======================================================
+\usepackage{amsmath,amssymb,amsfonts,amsthm,bm}
+    \newcommand{\mb}{\mathbf}
+    \newcommand{\mono}{\texttt}
+\usepackage{newpxmath}
+\usepackage{mathtools}
+    \DeclarePairedDelimiter{\nint}\lfloor\rceil
+    \DeclarePairedDelimiter{\abs} \lvert\rvert
+    \DeclarePairedDelimiter{\norm}\lVert\rVert
+    \DeclarePairedDelimiter{\eval}{.}{\rvert} % must use \eval*
+\usepackage{optidef}
+\usepackage{tensor}
+\usepackage{array}
+    \newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+    \newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
+    \newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\atantwo}{atan2}
+\DeclareMathOperator*{\+}{\hphantom{-}}
+\let\-\relax
+\DeclareMathOperator*{\-}{{-}}
+
+% ======================================================
+% Unit Formatting
+% ======================================================
+\newcommand{\lbm}{\ensuremath{\textrm{lb$_\textrm{m}$}}}
+\newcommand{\lbf}{\ensuremath{\textrm{lb$_\textrm{f}$}}}
+\newcommand{\hp} {\ensuremath{\textrm{hp}}}
+\newcommand{\kg} {\ensuremath{\textrm{kg}}}
+\newcommand{\km} {\ensuremath{\textrm{km}}}
+\newcommand{\pa} {\ensuremath{\textrm{Pa}}}
+\newcommand{\newton}{\ensuremath{\textrm{N}}}
+\newcommand{\second}{\ensuremath{\textrm{s}}}
+\newcommand{\joule} {\ensuremath{\textrm{J}}}
+\newcommand{\meter} {\ensuremath{\textrm{m}}}
+\newcommand{\watt}  {\ensuremath{\textrm{W}}}
+\newcommand{\hour}  {\ensuremath{\textrm{hr}}}
+\newcommand{\foot}  {\ensuremath{\textrm{ft}}}
+\newcommand{\mile}  {\ensuremath{\textrm{mile}}}
+\newcommand{\slug}  {\ensuremath{\textrm{slug}}}
+\newcommand{\degree}{\ensuremath{^\circ{}}}
+\newcommand{\degC}  {\ensuremath{^\circ{}\textrm{C}}}
+\newcommand{\degF}  {\ensuremath{^\circ{}\textrm{F}}}
+\newcommand{\degK}  {\ensuremath{\textrm{K}}}
+
+% ======================================================
+% Figure and Table Formatting
+% ======================================================
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{multirow}
+
+% ======================================================
+% References
+% ======================================================
+\usepackage{nameref}
+    \newcommand{\fullref}[1]{\ref{#1}:~\nameref{#1}}
+\usepackage{hyperref}
+    \hypersetup{
+      linkcolor  = [rgb]{0 0 0}, %[rgb]{0.90 0.54 0.72},
+      citecolor  = [rgb]{0 0 0}, %[rgb]{0.90 0.54 0.72},
+      urlcolor   = [rgb]{0 0 0}, %[rgb]{0.90 0.54 0.72},
+      colorlinks = true,
+      pdfnewwindow = true,
+    }
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+    \newcommand{\crefrangeconjunction}{--}
+
+% ======================================================
+% Code Formatting
+% ======================================================
+\usepackage[T1]{fontenc}
+\usepackage{pythonhighlight}
+\usepackage[framed,numbered]{matlab-prettifier}
+\usepackage{courier}
+\lstset{language=C++,
+        basicstyle=\linespread{0.8}\ttfamily\footnotesize,
+        keywordstyle=\color{blue}\ttfamily\footnotesize,
+        stringstyle=\color{red}\ttfamily\footnotesize,
+        commentstyle=\color{green}\ttfamily\footnotesize,
+        morecomment=[l][\color{magenta}]{\#}
+}
+
+% ======================================================
+% Graphics Path
+% ======================================================
+\graphicspath{{./figures/}}
